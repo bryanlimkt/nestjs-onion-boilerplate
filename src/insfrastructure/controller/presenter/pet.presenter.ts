@@ -8,7 +8,7 @@ export class PetPresenter extends GenericPresenter<IPet> {
   animal: AnimalType;
   age: number;
   createdAt: Date;
-  displayName: string;  // A property not present in IPet
+  displayName: string; // A property not present in IPet
 
   constructor(pet: IPet) {
     super(pet);

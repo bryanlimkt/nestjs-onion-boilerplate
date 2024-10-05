@@ -19,5 +19,4 @@ export class PetService implements IPetService {
   async delete(id: string): Promise<boolean> {
     return this.petsRepository.delete(id);
   }
-  
 }

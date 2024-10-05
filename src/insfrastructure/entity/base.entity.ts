@@ -1,8 +1,12 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn } from 'typeorm';
+import {
+  CreateDateColumn,
+  UpdateDateColumn,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { IBaseModel } from '../../domain/model/base.model';
 
-@Entity()
-export class EntityBase {
-  @PrimaryColumn()
+export abstract class EntityBase implements IBaseModel {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @CreateDateColumn()
