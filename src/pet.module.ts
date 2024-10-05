@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from './common/config/typeorm-config';
-import { IPetService } from './domain/service/pet.service';
+import { IPetService } from './domain/service/pet.service.interface';
 import { PetController } from './insfrastructure/controller/pet.controller';
-import { Pet } from './insfrastructure/enitity/pet.entity';
+import { Pet } from './insfrastructure/entity/pet.entity';
 import { PetService } from './usecases/pet.service';
 
 @Module({

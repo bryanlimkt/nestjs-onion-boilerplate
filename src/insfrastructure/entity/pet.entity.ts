@@ -1,12 +1,9 @@
-import { Column, CreateDateColumn, Entity, UpdateDateColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 import { AnimalType } from '../../domain/enum/animal-type.enum';
 import { IPet } from '../../domain/model/pet.model';
-
+import { EntityBase } from './base.entity';
 @Entity()
-export class Pet implements IPet {
-  @Column()
-  id: string;
-
+export class Pet extends EntityBase implements IPet {
   @Column()
   name: string;
 
@@ -15,10 +12,4 @@ export class Pet implements IPet {
 
   @Column({ type: Number })
   age: number;
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
 }

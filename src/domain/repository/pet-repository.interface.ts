@@ -1,9 +1,4 @@
 import { IPet } from '../model/pet.model';
+import { IGenericRepository } from './generic-repository.interface';
 
-export abstract class IPetsRepository {
-  abstract createPet(pet: IPet): Promise<IPet>;
-  abstract getAllPets(): Promise<IPet[]>;
-  abstract getPetById(id: string): Promise<IPet>;
-  abstract updatePet(pet: Partial<IPet>): Promise<IPet>;
-  abstract deletePet(id: string): Promise<IPet>;
-}
+export interface IPetsRepository extends IGenericRepository<IPet> {}
